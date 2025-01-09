@@ -4,7 +4,7 @@ int allocationCourante = 200;
 int epargne = 3000;
 
 // TODO : créer une variable int nommée prime avec pour valeur initiale 500.
-
+int prime = 500;
 
 // Afficher le résultat
 Console.WriteLine("Votre allocation courante est de " + allocationCourante);
