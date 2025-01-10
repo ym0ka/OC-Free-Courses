@@ -2,9 +2,9 @@
 
 string espion = "Je suis un espion";
 // TODO : Supprimer les accolades « { } »
-{
-    string entreAccolades = "Je suis un infiltré";
-}
+
+string entreAccolades = "Je suis un infiltré";
+
 Console.WriteLine(racine);
 Console.WriteLine(espion);
 Console.WriteLine(entreAccolades);
