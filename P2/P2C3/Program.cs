@@ -13,9 +13,19 @@ namespace Boucles
 
         public static void AmusonsNous()
         {
-            for (int i = 0; i < 5; i++)
+            // for (int i = 0; i < 5; i++)
+            // {
+            //     Console.WriteLine("Je m'amuse comme un fou !");
+            // }
+            
+            int i = 0;
+            while (i < 5)
             {
-                Console.WriteLine("Je m'amuse comme un fou !");
+                i++;
+                if (i != 4)
+                {
+                    Console.WriteLine("Je m'amuse comme un fou !");
+                }
             }
         }
     }
