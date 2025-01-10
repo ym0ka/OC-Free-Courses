@@ -11,9 +11,11 @@ using P2C2._1;
 if (args.Count() == 1)
 {
     BonjourConditionel.DireBonjour(args[0]);
+    //Bonjour Lucas!
 }
 else
 {
     BonjourConditionel.DireBonjour("le monde");
+    // Bonjour le monde!
 }
 
