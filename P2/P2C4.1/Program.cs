@@ -14,3 +14,6 @@ foreach (string stringRepresentationTemperature in args)
 // Calculer et afficher la température moyenne
 int temperatureMoyenne = MathSimple.CalculMoyenne(temperaturesEnregistreDegresCelcius);
 Console.WriteLine("La température moyenne est " + temperatureMoyenne);
+
+//dotnet run 4 7 9 16 > La température moyenne est 9
+//dotnet run 4 7 > La température moyenne est 5
