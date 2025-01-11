@@ -21,3 +21,8 @@ else
     int temperatureMoyenne = MathSimple.CalculMoyenne(temperaturesEnregistreDegresCelcius);
     Console.WriteLine("La température moyenne est " + temperatureMoyenne);
 }
+
+//dotnet run > Impossible de calculer la moyenne avec une liste vide !
+//dotnet run 8 6 9 > La température moyenne est 7
+//dotnet run 8 6 huit 2 > Unhandled exception. System.FormatException: The input string 'huit' was not in a correct format.
+
