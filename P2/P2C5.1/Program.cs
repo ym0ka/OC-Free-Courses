@@ -64,3 +64,12 @@ static bool URLValide(string chaineUrl)
         return false;
     }
 }
+
+//dotnet run
+//Veuillez saisir une URL valide
+
+//dotnet run https://www.openclassrooms.com
+//Vérification de l'URL, https://www.openclassrooms.com est une URL valide
+
+//dotnet run urlunpeucheloue
+//Vérification de l'URL, urlunpeucheloue n'est pas une URL valide
