@@ -6,7 +6,7 @@ namespace P3C8
 {
     public class Program
     {
-        public const string ACCOUNT_PATH = "account.json";
+        public const string AccountPath = "account.json";
         
         public static void Main()
         {
@@ -33,10 +33,10 @@ namespace P3C8
                 }
                 
                 //Si le choix est valide, on précharge toutes les informations de lecture du compte pour ne plus avoir à le faire dans chaque case du switch.
-                decimal currentUserBalance = CurrentAccount.GetCurrentAccountBalance(ACCOUNT_PATH);
-                decimal savingsUserBalance = SavingsAccount.GetSavingsAccountBalance(ACCOUNT_PATH);
-                string userFirstname = GetUserAccountFirstname(ACCOUNT_PATH);
-                string userLastname = GetUserAccountLastname(ACCOUNT_PATH);
+                decimal currentUserBalance = CurrentAccount.GetCurrentAccountBalance(AccountPath);
+                decimal savingsUserBalance = SavingsAccount.GetSavingsAccountBalance(AccountPath);
+                string userFirstname = GetUserAccountFirstname(AccountPath);
+                string userLastname = GetUserAccountLastname(AccountPath);
 
                 switch (userMenuChoice)
                 {
