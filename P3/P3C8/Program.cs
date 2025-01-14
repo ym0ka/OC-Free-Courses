@@ -117,7 +117,7 @@ namespace P3C8
             }
         }
 
-        public static string GetUserAccountFirstname(string json)
+        private static string GetUserAccountFirstname(string json)
         {
             try
             {
@@ -133,7 +133,7 @@ namespace P3C8
             }
         }
         
-        public static string GetUserAccountLastname(string json)
+        private static string GetUserAccountLastname(string json)
         {
             try
             {
