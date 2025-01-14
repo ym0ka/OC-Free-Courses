@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text.Json;
-using System.IO;
+﻿using System.Text.Json;
 
 namespace P3C8
 {
