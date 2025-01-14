@@ -69,8 +69,8 @@ namespace P3C8
                                 Console.WriteLine("Merci d'entrer un chiffre supérieur à 0.");
                             }
                         }
-                        decimal userAccountBalanceAfterDeposit = CurrentAccount.DisposalMoneyToCurrentAccount(decimal.Parse(userAmountToDeposit), AccountPath);
-                        Console.WriteLine($"Vous avez déposé {userAmountToDeposit}€ sur votre compte courant. !\nVous possédez désormais {userAccountBalanceAfterDeposit}€ !");
+                        decimal userCurrentAccountBalanceAfterDeposit = CurrentAccount.DisposalMoneyToCurrentAccount(decimal.Parse(userAmountToDeposit), AccountPath);
+                        Console.WriteLine($"Vous avez déposé {userAmountToDeposit}€ sur votre compte courant. !\nVous possédez désormais {userCurrentAccountBalanceAfterDeposit}€ !");
                         //TODO : Prompt value à retirer, confirmer la valeur + mettre le fichier à jour
                         Console.WriteLine("CR");
                         break;
@@ -95,19 +95,59 @@ namespace P3C8
                                 Console.WriteLine("Merci d'entrer un chiffre supérieur à 0.");
                             }
                         }
-                        decimal userAccountBalanceAfterWithdraw = CurrentAccount.WithdrawMoneyFromCurrentAccount(decimal.Parse(userAmountToWithdraw), AccountPath);
-                        Console.WriteLine($"Vous avez retiré {userAmountToWithdraw}€ de votre compte courant. !\nVous possédez désormais {userAccountBalanceAfterWithdraw}€ !");
+                        decimal userCurrentAccountBalanceAfterWithdraw = CurrentAccount.WithdrawMoneyFromCurrentAccount(decimal.Parse(userAmountToWithdraw), AccountPath);
+                        Console.WriteLine($"Vous avez retiré {userAmountToWithdraw}€ de votre compte courant. !\nVous possédez désormais {userCurrentAccountBalanceAfterWithdraw}€ !");
                         break;
                     case "ES":
                         Console.WriteLine($"Vous possédez actuellement {savingsUserBalance}€ sur votre compte courant.");
                         break;
                     case "ED":
-                        //TODO : Prompt value à déposer, confirmer la valeur + mettre le fichier à jour
-                        Console.WriteLine("ED");
+                        Console.WriteLine("Quel montant souhaitez-vous déposer ? ");
+                        userAmountToDeposit = null;
+                        while (string.IsNullOrWhiteSpace(userAmountToDeposit) || !decimal.TryParse(userAmountToDeposit, out _) || decimal.Parse(userAmountToDeposit) < 0)
+                        {
+                            userAmountToDeposit = Console.ReadLine();
+                            if (string.IsNullOrWhiteSpace(userAmountToDeposit))
+                            {
+                                Console.WriteLine("Merci d'entrer une valeur non nulle.");
+                            }
+                            
+                            if (decimal.TryParse(userAmountToDeposit, out _))
+                            {
+                                Console.WriteLine("Merci d'entrer un chiffre.");
+                            }
+                            
+                            if (decimal.Parse(userAmountToDeposit) < 0)
+                            {
+                                Console.WriteLine("Merci d'entrer un chiffre supérieur à 0.");
+                            }
+                        }
+                        decimal userSavingsAccountBalanceAfterDeposit = SavingsAccount.DisposalMoneyToSavingsAccount(decimal.Parse(userAmountToDeposit), AccountPath);
+                        Console.WriteLine($"Vous avez déposé {userAmountToDeposit}€ sur votre compte épargne. !\nVous possédez désormais {userSavingsAccountBalanceAfterDeposit}€ !");
                         break;
                     case "ER":
-                        //TODO : Prompt value à retirer, confirmer la valeur + mettre le fichier à jour
-                        Console.WriteLine("ER");
+                        Console.WriteLine("Quel montant souhaitez-vous retirer ? ");
+                        userAmountToWithdraw = null;
+                        while (string.IsNullOrWhiteSpace(userAmountToWithdraw) || !decimal.TryParse(userAmountToWithdraw, out _) || decimal.Parse(userAmountToWithdraw) < 0)
+                        {
+                            userAmountToWithdraw = Console.ReadLine();
+                            if (string.IsNullOrWhiteSpace(userAmountToWithdraw))
+                            {
+                                Console.WriteLine("Merci d'entrer une valeur non nulle.");
+                            }
+                            
+                            if (decimal.TryParse(userAmountToWithdraw, out _))
+                            {
+                                Console.WriteLine("Merci d'entrer un chiffre.");
+                            }
+                            
+                            if (decimal.Parse(userAmountToWithdraw) < 0)
+                            {
+                                Console.WriteLine("Merci d'entrer un chiffre supérieur à 0.");
+                            }
+                        }
+                        decimal userSavingsAccountBalanceAfterWithdraw = SavingsAccount.WithdrawMoneyFromSavingsAccount(decimal.Parse(userAmountToWithdraw), AccountPath);
+                        Console.WriteLine($"Vous avez retiré {userAmountToWithdraw}€ de votre compte épargne. !\nVous possédez désormais {userSavingsAccountBalanceAfterWithdraw}€ !");
                         break;
                     case "X":
                         //TODO : Quitter le programme
